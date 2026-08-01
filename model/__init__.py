@@ -1,0 +1,1 @@
+from .single_dinov2_nav import SingleDINOv2Nav

@@ -1,0 +1,33 @@
+project:
+  name: 'SingleDINOv2Nav'
+  run_name: 'single_dinov2_run'
+  result_dir: 'results'
+
+model:
+  knodes: 5
+  in_channel: 16
+  img_input_size: [360, 640]
+
+loss:
+  w_goal: 2.0
+  w_obs: 3.0
+  w_motion: 1.0
+  w_fear: 0.0
+  fear_ahead_dist: 2.5
+  obstacle_thresh: 1.25
+
+training:
+  batch_size: 16
+  max_epochs: 100
+  lr: 0.002
+  optimizer: 'sgd'
+  momentum: 0.9
+  weight_decay: 0.0001
+  lr_scheduler: 'plateau'
+  lr_factor: 0.5
+  lr_patience: 3
+  min_lr: 0.00001
+
+logging:
+  enable_wandb: false
+  pbar_rate: 20
