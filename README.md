@@ -2,6 +2,10 @@
 
 基于 **ViPlanner** 思想、使用**单个冻结 DINOv2** 骨干的端到端局部导航模型。输入一张 **RGB 图像 + 一个目标点**，直接输出 **5 个路径关键点 + 碰撞概率（fear）**，**无需深度图输入**。
 
+<div align="center">
+  <img src="assets/demo.gif" width="360" alt="Demo"/>
+</div>
+
 本项目是原 ViPlanner 的变体：用 **冻结的 DINOv2 多尺度特征 + 完整 DPT（RefineNet）融合**替换原「DINOv2 最后一层 + PlannerNet 深度编码器」的双编码器结构，从而去掉深度图依赖，仅凭 RGB 完成端到端轨迹规划。
 
 ## 模型结构
